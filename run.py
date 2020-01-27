@@ -10,7 +10,7 @@ def save_password(user_name,password):
     '''
     Function to save new password
     '''
-    new_password(user_name,password)
+    credentials.save_password()
 
 def del_password(user_name,password):
     '''
@@ -51,16 +51,17 @@ def main():
 
             print("password ...")
             password = input()
-            save_user(create_user(u_name,password)) # create and save new contact.
+
+            save_password(save_password(user_name,password)) # create and save new user.
             print ('\n')
-            print("New account {u_name} {password} created")
+            print("New account {u_name} and password{password} created")
             print ('\n')
 
 
         elif short_code == 'vp':
                 print("-" *50)
-                print(u*"Enter your details to login to your account" )
-                if view_password():
+                print(10*"Enter your details to login to your account" )
+                if view_password("winnie","mwikali"):
                     print("Here is a your locker password")
                     print('\n')
 
