@@ -36,17 +36,9 @@ def main():
 
     print(f"Hello {user_name}. what would you like to do?")
     print('\n')
-def save_password(user_name,password):def save_password(user_name,password):
-    '''
-    Function to save new password
-    '''
-    new_password(user_name,password)
-    '''
-    Function to save new password
-    '''
-    new_password(user_name,password)
+
     while True:
-        print("Use these short codes : cc - create an account, vp - view password, ad -add an account,dc -delete an account ")
+        print("Use these short codes : cc - create an account, vp - view password, ac -add an account,dc -delete an account ")
 
         short_code = input().lower()
 
