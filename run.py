@@ -185,7 +185,7 @@ def main():
 
         elif welcome_text == "e":
             print("\n")
-            print(f"Thank you for your interest")
+            print(f"Visit again soon!")
             print("-"*60)
         else:
             print("Invalid entry. Enter command again")

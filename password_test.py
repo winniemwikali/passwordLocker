@@ -9,7 +9,7 @@ class TestCredentials(unittest.TestCase):
         '''
         Setting up the structure before each test
         '''
-        self.new_user = Credentials(1,"","")
+        self.new_user = Credentials(1,"winnie","mwikali")
     
     def tearDown(self):
         '''
@@ -43,7 +43,7 @@ class TestCredentials(unittest.TestCase):
         found_user = Credentials.authenticate_account("Test","Password")
         self.assertEqual(found_user.identify , test_account.identify)
 
-class TestUserData(unittest.TestCase):
+class TestUser(unittest.TestCase):
     '''
     Test class that defines the test cases for creating websites log in credentials
     '''
@@ -51,13 +51,13 @@ class TestUserData(unittest.TestCase):
         '''
         Setting up the structure before each test
         '''
-        self.new_data = UsersData(1,1,"","","")
+        self.new_user = Users(1,1,"","","")
     
     def tearDown(self):
         '''
         Cleans up the test after test is complete
         '''
-        UsersData.data_list = []
+        Users.users_list = []
     
     def test_init(self):
         '''
