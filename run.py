@@ -12,6 +12,11 @@ def save_password(user_name,password):
     '''
     new_password(user_name,password)
 
+def del_password(user_name,password):
+    '''
+    Function to delete password
+    '''
+    credentials.delete_password()
 
 def add_password(user_name,password):
     '''
