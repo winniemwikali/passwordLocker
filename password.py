@@ -11,11 +11,6 @@ class Credentials:
         self.user_name = user_name
         self.password = password
 
-    def create_account(self):
-        '''
-        creating and saving log in credentials for users
-        '''
-        Credentials.users_list.append(self)
     
     @classmethod
     def authenticate_account(cls, name, key):

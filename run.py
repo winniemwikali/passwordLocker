@@ -58,7 +58,7 @@ def main():
 
 
         elif short_code == 'vp':
-                print("- *50")
+                print("-" *50)
                 print(u*"Enter your details to login to your account" )
                 if view_password():
                     print("Here is a your locker password")
