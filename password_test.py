@@ -1,5 +1,5 @@
-import unittest
-from password import Users,Credentials
+from password import Credentials,UsersData
+import unittest, pyperclip
 
 class TestCredentials(unittest.TestCase):
     '''
@@ -9,7 +9,7 @@ class TestCredentials(unittest.TestCase):
         '''
         Setting up the structure before each test
         '''
-        self.new_user = Credentials("winnie","mwikali", "abdc")
+        self.new_user = Credentials(1,"","")
     
     def tearDown(self):
         '''
@@ -17,12 +17,13 @@ class TestCredentials(unittest.TestCase):
         '''
         Credentials.users_list = []
     
-    def test__init__(self):
+    def test_init(self):
         '''
         Test case to test if the case has been initialized properly
         '''
-        self.assertEqual(self.new_user.user_name,"mwikali")
-        self.assertEqual(self.new_user.password,"abdc")
+        self.assertEqual(self.new_user.identify,1)
+        self.assertEqual(self.new_user.user_name,"")
+        self.assertEqual(self.new_user.password,"")
     
     def test_create(self):
         '''
@@ -36,76 +37,76 @@ class TestCredentials(unittest.TestCase):
         Testing to check if the authenticate function can sign in a user properly
         '''
         self.new_user.create_account()
-        test_account = Credentials("winnie","abcd","Password")
+        test_account = Credentials(1,"Test","Password")
         test_account.create_account()
 
+        found_user = Credentials.authenticate_account("Test","Password")
+        self.assertEqual(found_user.identify , test_account.identify)
 
-
-
-class TestUsers(unittest.TestCase):
+class TestUserData(unittest.TestCase):
     '''
-    Test class that test cases authentication for the users.
-
-    Args:
-    unittest.TestCase:TestCase class that helps in creating test cases
+    Test class that defines the test cases for creating websites log in credentials
     '''
     def setUp(self):
         '''
-        set up method to run each test cases.
+        Setting up the structure before each test
         '''
-        self.new_user = Users("winnie","mwikali")# create users object
-
-
-    def test_init(self):
-        '''
-        test_int test case to test initialization
-        '''
-        self.assertEqual(self.new_user.user_name,"winnie")
-        self.assertEqual(self.new_user.password,"mwikali")
-
-    def test_creat(self):
-        '''
-        test_creat_account test case if the account is created
-        '''
-        
-        self.new_user.creat_account()
-        self.assertEqual(len(Users.users_list),1)
+        self.new_data = UsersData(1,1,"","","")
     
     def tearDown(self):
         '''
-        tearDown to clean up each case
+        Cleans up the test after test is complete
         '''
-        Users.users_list = []
+        UsersData.data_list = []
+    
+    def test_init(self):
+        '''
+        Test case to evaluate if the case has been initialized properly
+        '''
+        self.assertEqual(self.new_data.ident,1)
+        self.assertEqual(self.new_data.data_id,1)
+        self.assertEqual(self.new_data.website,"")
+        self.assertEqual(self.new_data.web_key,"")
+        self.assertEqual(self.new_data.name,"")
 
-    def test_save(self):
-        '''
-        test_save_multiple_password to check if we can save passwords
-        '''
-        self.new_user.save_password()
-        
-        self.assertEqual(len(Users.users_list),1)
-
-    def test_delete_password(self):
-        '''
-        test_delete_password to test if we can delete passwords
-        '''
-        
-        self.new_user.delete_password()
-        self.assertEqual(len(Users.users_list),0)
     def test_add_password(self):
         '''
-        test_add_password to add new password for new accounts
+        Testing if the new website and password can be saved
         '''
-        self.new_user.add_password()
-        self.assertEqual(len(Users.users_list),1)
-    def test_view_password(self):
-        '''
-        test_view_password to view various passwords
-        '''
-        self.new_user.view_password()
-        self.assertEqual(len(Users.users_list),0)
+        self.new_data.add_password()
+        self.assertEqual(len(UsersData.data_list),1)
 
-class TestCredentials(unittest.TestCase):
+    def test_display_data(self):
+        '''
+        Testing if the data can be displayed.
+        '''
+        self.new_data.add_password()
+        test_data = UsersData(1,1,"","","")
+        test_data.add_password()
 
- if __name__ == '__main__':
+        data_found = UsersData.display_data(1,1)
+        self.assertEqual(data_found.website,test_data.website)
+    
+    def test_data_exists(self):
+        '''
+        Testing to check if the data functions works well
+        '''
+        self.new_data.add_password()
+        test_data = UsersData(1,1,"","","")
+        test_data.add_password()
+
+        data_exists = UsersData.existing_data(1)
+        self.assertTrue(data_exists)
+    
+    def test_copy_password(self):
+        '''
+        Testing if the copy password function works
+        '''
+        self.new_data.add_password()
+        UsersData.copy_password(1,1)
+
+        self.assertEqual(self.new_data.user_key,pyperclip.paste())
+
+
+if __name__ == "__main__":
     unittest.main()
