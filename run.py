@@ -84,28 +84,28 @@ def main():
             print("\n")
             create_user(new_account(my_id,my_username,my_password,))
             my_id+=1
-            print(f"User {my_username} has been created successfully.\nSign in to continue")
+            print(f"User {my_username} has been created.\nSign in to continue")
             entries.append(0)
-            print("-"*30)
+            print("-"*20)
 
         elif welcome_text == "s".lower():
             print("Enter username and password to continue:")
-            print("-"*50)
+            print("-"*40)
             my_login = input("Username: ")
             my_key = input("Password: ")
             get_result = authenticate(my_login,my_key)
             if get_result == 0:
                 print("\n")
                 print("Invalid username or password")
-                print("-"*27)
+                print("-"*29)
             elif get_result!=0:
                 print("\n")
                 print(f"Welcome {get_result.user_name}! What's up?")
                 while True:
-                    print("Type:\n  a - Add your own Password\n  g - generate random password\n v - View Passwords\n  c - copy password to clipboard\n  l - Log Out")
+                    print("Type:\n  ap - Add your own Password\n  gp - generate random password\n vp - View Passwords\n  cp - copy password to clipboard\n  l - Log Out")
                     get_input = input().lower()
-                    if get_input == "g":
-                        print("Add website and password to store them securely:")
+                    if get_input == "gp":
+                        print("Add website and password to store them:")
                         print("Enter Website:")
                         my_website = input()
                         print("Enter USername:")
@@ -135,7 +135,7 @@ def main():
                             print("\nEnter a command to continue")
                             print("-"*20)
                         else:
-                            print("\nYou have no data.\nType a to generate some passwords")
+                            print("\nYou have 0 data.\nType a to generate some passwords")
                             print("-"*20)
 
                     elif get_input == "c":
