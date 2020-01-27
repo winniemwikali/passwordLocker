@@ -16,3 +16,6 @@ Python
 ## Contact
 - Tel:0742214094
 - Email:mwikaliwinnie303@gmail.com
+
+## License
+[MIT] Copyright(Winnie Mwikali)
