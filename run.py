@@ -53,13 +53,13 @@ def main():
             password = input()
             save_user(create_user(u_name,password)) # create and save new contact.
             print ('\n')
-            print(f"New account {u_name} {password} created")
+            print("New account {u_name} {password} created")
             print ('\n')
 
 
         elif short_code == 'vp':
                 print("- *50")
-                print(f* "Enter your details to login to your account" )
+                print(u*"Enter your details to login to your account" )
                 if view_password():
                     print("Here is a your locker password")
                     print('\n')
@@ -78,4 +78,6 @@ def main():
                 break
         else:
                 print("I really didn't get that. Please use the short codes")
+if __name__ == '__main__':
 
+    main()
