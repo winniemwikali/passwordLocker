@@ -12,11 +12,6 @@ def save_password(user_name,password):
     '''
     new_password(user_name,password)
 
-def del_password(user_name,password):
-    '''
-    Function to delete password
-    '''
-    credentials.delete_password()
 
 def add_password(user_name,password):
     '''
@@ -36,7 +31,15 @@ def main():
 
     print(f"Hello {user_name}. what would you like to do?")
     print('\n')
-
+def save_password(user_name,password):def save_password(user_name,password):
+    '''
+    Function to save new password
+    '''
+    new_password(user_name,password)
+    '''
+    Function to save new password
+    '''
+    new_password(user_name,password)
     while True:
         print("Use these short codes : cc - create an account, vp - view password, ad -add an account,dc -delete an account ")
 
