@@ -12,3 +12,7 @@ https://winniemwikali.github.io/passwordLocker/
 
 ## Technologies used
 Python
+
+## Contact
+- Tel:0742214094
+- Email:mwikaliwinnie303@gmail.com
