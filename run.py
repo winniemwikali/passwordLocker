@@ -102,7 +102,7 @@ def main():
                 print("\n")
                 print(f"Welcome {get_result.user_name}! What's up?")
                 while True:
-                    print("Type:\n  ap - Add your own Password\n  gp - generate random password\n vp - View Passwords\n  cp - copy password to clipboard\n  l - Log Out")
+                    print("Type:\n  ap- Add your own Password\n  gp - generate random password\n vp - View Passwords\n  cp - copy password to clipboard\n  l - Log Out")
                     get_input = input().lower()
                     if get_input == "gp":
                         print("Add website and password to store them:")
@@ -110,19 +110,19 @@ def main():
                         my_website = input()
                         print("Enter USername:")
                         my_name = input()
-                        print("What length do you want your password to be?")
-                        password_length = int(input("Length of password: "))
+                        print("How many chacters do you want your password to have")
+                        password_length = int(input("how many characters: "))
                         my_webkey = password_generator(password_length)
                         my_ident = get_result.identify
                         add_data(my_new_data(my_ident,entries[my_ident],my_website,my_webkey,my_name))
                         entries[my_ident]=entries[my_ident]+1
-                        print("\nWait...")
+                        print("\nchilux...")
                         time.sleep(1)
                         print("\n")
                         print(f"***Your website is {my_website}, username is {my_name}***")
                         print("-"*60)
 
-                    elif get_input == "v":
+                    elif get_input == "vp":
                         if data_existing(get_result.identify):
                             length = entries[get_result.identify]
                             print(f"You have {length} passwords:")
@@ -138,7 +138,7 @@ def main():
                             print("\nYou have 0 data.\nType a to generate some passwords")
                             print("-"*20)
 
-                    elif get_input == "c":
+                    elif get_input == "cp":
                         if data_existing(get_result.identify):
                             print("Enter the index of password you want to copy:")
                             get_index = int(input("Enter index: "))-1
@@ -161,7 +161,7 @@ def main():
                         print(f"Visit again soon {get_result.user_name}!")
                         print("-"*60)
                         break
-                    elif get_input == "a":
+                    elif get_input == "ap":
                         print("Add website, username and password to store them securely:")
                         print("Enter Website:")
                         my_website = input()
@@ -172,7 +172,7 @@ def main():
                         my_ident = get_result.identify
                         add_data(my_new_data(my_ident,entries[my_ident],my_website,my_webkey,my_name))
                         entries[my_ident]=entries[my_ident]+1
-                        print("\nWait...")
+                        print("\nChilux...")
                         time.sleep(1)
                         print("\n")
                         print(f"***Your website is {my_website}, username is {my_name}***")
