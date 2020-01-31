@@ -8,7 +8,32 @@
 https://winniemwikali.github.io/passwordLocker/
 
 ## BDD
-- If a user creates an account they are required to sign in to continue.After that there are options to view passwords,generate password etc
+* c creates new account
+
+* s is to sign in
+
+* e to exit
+
+* ap to add your password
+
+* gp generate random password
+
+* vp view password
+
+* cp copy password
+
+* l log out
+## setup Insructions
+
+* clone this repository
+
+* Have pythone3.6 on your device
+
+* Run application in your terminal using ./run.py
+
+* Test application using $ python3.6 password_test.py
+
+* Once you run the application follow the instruction on the terminal
 
 ## Technologies used
 Python
