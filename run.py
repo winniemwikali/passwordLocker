@@ -1,3 +1,5 @@
+#!/usr/bin/env python3.6
+
 import string,random,time
 from password import Credentials,UsersData
 
